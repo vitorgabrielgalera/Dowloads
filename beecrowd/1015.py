@@ -1,0 +1,10 @@
+a = int(input())
+x1,y1 = a.split(" ")
+b = int(input())
+x2,y2 = b.split(" ")
+x1 = float(x1)
+x2 = float(x2)
+y1 = float(y1)
+y2 = float(y2)
+r = ((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1))**0.5
+print(f"{r:.4f}")

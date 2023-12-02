@@ -1,0 +1,7 @@
+file_stream = open('biblia-em-txt.txt', encoding='utf-8')
+biblia_full = file_stream.read()
+file_stream.close()
+print(len(biblia_full))
+palavras = (biblia_full.split(" "))
+print(len(palavras))
+print(palavras.count("Jesus"))
