@@ -1,38 +1,12 @@
 #importo as bibliotecas
 from tkinter import *
-from tkinter import messagebox
-from tkinter import filedialog
 from PIL import ImageTk, Image, ImageOps
 import os
 
-#crio funções para o menu
-def open_file():
-    #defino para escolher um arquivo
-    folder_path = filedialog.askdirectory()
-    #defino mensagem e sons
-    if folder_path:
-        messagebox.showinfo(title="abrindo diretório", message=f"O diretório selecionado foi: {folder_path}")
-    else:
-        messagebox.showerror(title="abrindo diretório", message="Nenhum diretório foi selecionado")
-
 #abro uma janela
 root = Tk()
+root.iconbitmap("zoo_ecosystem_exotic_wildlife_wild_animal_fauna_nature_capybara_icon_259316.ico")
 root.title("capivaras")
-
-#crio meu menu
-menubar = Menu(root)
-filemenu = Menu(menubar, tearoff=0)
-
-#coloco funções para o menu
-filemenu.add_command(label="Open", command= open_file)
-filemenu.add_command(label="Save")
-filemenu.add_command(label="Exit")
-
-#coloco as funções no menu
-menubar.add_cascade(label="File", menu=filemenu)
-
-#coloco o menu na janela
-root.config(menu=menubar)
 
 #pega um arquivo e faz uma lista com o que tem tudo no arquivo
 arquivos = os.listdir("imagens")
@@ -122,11 +96,6 @@ sair.grid(row=1, column=1, sticky=E + W)
 
 next = Button(root,text="next",command=next_image, fg="white", bg="black", font="Overthink")
 next.grid(row=1, column=2, sticky=E + W)
-
-#defino teclas para substituir os botôes
-root.bind("n", lambda event: next_image())
-root.bind("p", lambda event: prev_image())
-root.bind("q", lambda event: root.quit())
 
 #rodo a janela
 root.mainloop()
