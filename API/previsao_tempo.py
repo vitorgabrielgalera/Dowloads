@@ -111,6 +111,7 @@ def get_weather(city):
         label_text += '' + str(forecast["temp_min"])
         label_text += '' + str(forecast["temp_max"])
         label_text += '' + forecast["description"]
+
         #crio um label para mostrar os dados gerais
         weather_label = tk.Label(weather_frame, text=label_text,font=("Helvetica", 12),justify="left")
 
@@ -136,7 +137,7 @@ city_label = tk.Label(root,text="",font=("Helvetica",16))
 city_label.grid(row=4,column=0,padx=10,pady=10)
 
 #Label para mostrar a previsão do tempo
-weather_frame = tk.Label(root,text="",font=("Helvetica",16))
+weather_frame = tk.Frame(root)
 
 #posiciona o label na janela
 weather_frame.grid(row=5,column=0,padx=10,pady=10)
